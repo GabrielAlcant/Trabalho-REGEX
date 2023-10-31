@@ -8,7 +8,7 @@ def test_sentence(pattern, sentence):
 
 # a) Casais heterossexuais mais velhos que os filhos com pelo menos duas filhas mulheres, ou pelo menos um filho homem, ou ainda pelo menos dois filhos homens e uma filha mulher.
 print('Questao 2 Letra A')
-pattern_a = r'((HM|MH)*)((h|m)(h|m)(h|m)*)$'
+pattern_a = r'(HM|MH)((h|m)(h|m)(h|m)*)$'
 test_sentence(pattern_a, "MHHmm")
 test_sentence(pattern_a, "MHhmmm")  
 test_sentence(pattern_a, "MHhmm")   
@@ -28,7 +28,7 @@ test_sentence(pattern_b, "HMHMHMHMHMMHH")
 
 # c) Casais heterossexuais mais velhos que os filhos, com a filha mais velha mulher e o filho mais novo homem.
 print('Questao 2 Letra C')
-pattern_c = r'^(HM|MH)*mh$'
+pattern_c = r'^(HM|MH)m(h|m)*h$'
 test_sentence(pattern_c, "MHmh")     
 test_sentence(pattern_c, "HMmhh")    
 test_sentence(pattern_c, "MHhmm")
@@ -37,7 +37,7 @@ test_sentence(pattern_c, "MHMHMHMHMHMHHH")
 
 # d) Casais homossexuais mais velhos que os filhos, com pelo menos seis filhos, em que os dois primeiros filhos formam um casal e os últimos também.
 print('Questao 2 Letra D')
-pattern_d = r'(MM|HH)+(mh|hm){2}(h|m)+(mh|hm)'
+pattern_d = r'(MM|HH)(mh|hm){2}(h|m)+(mh|hm)'
 test_sentence(pattern_d, "HHhmmmmh")  
 test_sentence(pattern_d, "MMmhhhmh")   
 test_sentence(pattern_d, "HMhmhhhm")
