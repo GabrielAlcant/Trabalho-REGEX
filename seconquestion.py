@@ -19,7 +19,7 @@ test_sentence(pattern_a, "HHHHHHHHHHHmhmhmhm")
 
 # b) Casais heterossexuais mais velhos que os filhos e com uma quantidade ímpar de filhas mulheres.
 print('Questao 2 Letra B')
-pattern_b = r'^((HM|MH)*)((h|m)*m{3})$'
+pattern_b = r'^(HM|MH)h*mh*(h*mh*mh*)*$'
 test_sentence(pattern_b, "MHmhh")     
 test_sentence(pattern_b, "MHhmmm")    
 test_sentence(pattern_b, "MMhmm")  
